@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tour of DOM</title>
+  <link rel="stylesheet" href="styles/style.css">
+  
+  <style>
+    .fruits-container li{
+      color: rgb(25, 0, 255);
+    }
+
+    #fruits-title{
+      color: black;
+    }
+
+    .important-places{
+      color: blueviolet;
+    }
+
+
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Welcome to my Dom</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, quo!</p>
+  </header>
+
+  <main id="main-container">
+    <section>
+      <h1>my awesome DOM</h1>
+
+    <ul>
+      <li>ok ok</li>
+      <li>no no</li>
+      <li>ya ya</li>
+    </ul>
+    </section>
+
+    <section class="fruits-container">
+      <h1 id="fruits-title">Fruits i like</h1>
+      <ul>
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Carrot</li>
+      </ul>
+    </section>
+
+    <section id="places-container" class="large-text">
+      <h1 id="places-title">Pleaces I like to visit</h1>
+      <ul id="places-list">
+        <li class="important-places">sundarban</li>
+        <li class="important-places">bandorban</li>
+        <li class="important-places">kataban</li>
+        <li>shalban</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="js/dom.js"></script>
+  <script src="js/append.js"></script>
+  <script src="js/styleInJs.js"></script>
+  
+  <script>
+    //inspact a function call kora jai student.stusy(5) diye
+    const student= {
+      name: "Abul",
+      ID: 11,
+      study: function(time){
+        console.log(time,"chiki chki chki")
+      }
+    }
+
+
+      //ekhane for of loop diye li gular moddhe ki ache ta inspact a dekbo
+      const liCollection= document.getElementsByTagName("li");
+
+      for(const li of liCollection){
+        console.log(li);
+      }
+
+      //h1 er moddhe ki lekha ache seta dekbo
+      const alHeadings= document.getElementsByTagName("h1");
+      for(const h1 of alHeadings){
+        console.log(h1.innerText);
+      }
+
+      //class er nam diye console a dekha
+      const places= document.getElementsByClassName("important-places");
+
+      for(const place of places){
+        console.log(place.innerText);
+      }
+
+      //id er moddhe console er maddhome innerText change kora jai
+      const fruits= document.getElementById("fruits-title");
+      fruits.innerText= "change by js";
+
+      //querySelector
+      const someLi= document.querySelectorAll(".fruits-container li");
+      //console.log(someLi);
+
+      for(const li of someLi){
+        console.log(li.innerText);
+      }
+    
+  </script>
+</body>
+</html>
